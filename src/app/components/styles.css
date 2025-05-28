@@ -1,0 +1,806 @@
+/* Estilos generales */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+.home-container {
+    text-align: center;
+    margin: 0 auto;
+}
+h4 {
+    font-family: 'Arial', sans-serif; /* Fuente elegante */
+    font-size: 2.5rem; /* Tamaño grande */
+    color: #2c3e50 !important; /* Asegura que este color se aplique *//* Color oscuro y profesional */
+    text-align: center; /* Centrar el texto */
+    margin: 20px 0; /* Espaciado arriba y abajo */
+    padding: 10px; /* Espaciado interno */
+    background-color: #e8f6f3; /* Color de fondo suave */
+    border-left: 5px solid #1abc9c; /* Línea a la izquierda para destacar */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    border-radius: 10px; /* Bordes redondeados */
+    transition: transform 0.3s, color 0.3s; /* Transición suave */
+}
+
+h4 {
+    transform: translateY(-3px); /* Efecto de elevación al pasar el cursor */
+    color: #16a085; /* Color más brillante en hover */
+}
+
+.intro-message {
+    margin-bottom: 20px; /* Espacio debajo del mensaje */
+    color: #333; /* Color de texto */
+    font-size: 1.1em; /* Tamaño de fuente un poco más grande */
+    font-style: italic; /* Texto en cursiva para mayor énfasis */
+    text-align: center; /* Centramos el texto */
+}
+
+
+
+/* Estilos del encabezado */
+header {
+    position: relative;
+    padding: 20px;
+    background-color: #2cce1a;
+    color: white;
+}
+
+.header-title {
+    margin: 0;
+    font-size: 2rem;
+}
+
+/* Botón de inicio de sesión */
+.login-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #fff;
+    color: #4CAF50;
+    border: 2px solid #4CAF50;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Hover effect */
+.login-button:hover {
+    background-color: #4CAF50;
+    color: #fff;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .login-button {
+        padding: 8px 16px; /* Reducir el tamaño en pantallas más pequeñas */
+        top: 15px; /* Ajustar la posición superior */
+        right: 15px; /* Ajustar la posición derecha */
+    }
+}
+
+@media (max-width: 480px) {
+    .login-button {
+        padding: 6px 12px; /* Más pequeño para móviles */
+        top: 10px; /* Posicionar más cerca del borde */
+        right: 10px;
+        font-size: 14px; /* Reducir el tamaño de la fuente */
+    }
+}
+
+
+/* Estilos del menú */
+nav {
+    margin: 20px 0;
+}
+
+nav h2 {
+    color: #131413; /* Cambia este color según tus preferencias */
+    margin-bottom: 20px;
+}
+
+/* Categoría */
+.category-title {
+    cursor: pointer;
+    font-weight: bold;
+    color: #2e7d32;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.category-title:hover {
+    background-color: rgb(187, 221, 126);
+}
+
+.subcategory {
+    margin-bottom: 10px; /* Añade espacio debajo de cada subcategoría */
+}
+
+.subcategory-title {
+    cursor: pointer;
+    font-weight: bold;
+    color: #3020c1;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    border-radius: 5px;
+    border-bottom: 1px solid #d3d3d3; /* Borde para separar cada subcategoría */
+}
+
+.subcategory-title.empty {
+    color: #808080; /* Cambia el color para subcategorías sin parámetros */
+    background-color: #f0f0f0;
+}
+
+.subcategory-title:hover {
+    background-color: rgba(0, 123, 255, 0.1); /* Fondo al pasar el cursor */
+}
+
+/* Subcategoría activa */
+.subcategory-title.active {
+    color: #1a73e8;
+    background-color: rgba(26, 115, 232, 0.2); /* Fondo distintivo */
+    border-left: 3px solid #1a73e8;
+}
+
+/* Parámetro */
+.parametro-title {
+    font-size: 1rem;
+    color: #0c0404;
+    padding: 5px;
+    background-color: #f9f9f9;
+    border-left: 3px solid #4caf50;
+    border-radius: 5px;
+    margin-left: 30px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.parametro-title:hover {
+    background-color: #e0f2e9;
+    color: #388e3c;
+}
+
+.menu-list {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.menu-list li {
+    margin: 10px 0;
+}
+
+.menu-list a {
+    color: #4caf50;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    background-color: #e8f5e9;
+    display: block;
+    width: 200px;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.menu-list a:hover {
+    background-color: #c8e6c9;
+}
+
+.submenu-list {
+    list-style-type: none;
+    padding-left: 20px;
+    display: none;
+}
+
+/* Mostrar el submenú cuando esté activo */
+.menu-list > li.active .submenu-list {
+    display: block;
+}
+
+.menu-list > li div {
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Estilo para el overlay del modal */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro opaco */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    transition: opacity 0.3s ease;
+}
+
+/* Estilos de la página de inicio de sesión */
+.login-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+}
+
+.login-modal {
+    background-color: #ffffff;
+    padding: 40px;
+    max-width: 400px;
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.login-modal h2 {
+    font-size: 1.8rem;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+.login-modal form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.login-modal input {
+    padding: 12px;
+    font-size: 1rem;
+    border: 1px solid #4CAF50;
+    border-radius: 6px;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s ease;
+}
+
+.login-modal input:focus {
+    border-color: #4CAF50;
+    outline: none;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.4);
+}
+
+.login-modal button[type="submit"] {
+    padding: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #ffffff;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-modal button[type="submit"]:hover {
+    background-color: #45a049;
+}
+.modal-content {
+    margin-top: 20px; /* Margen superior */
+    padding: 20px; /* Espaciado interno */
+    border: 1px solid #ddd; /* Borde */
+    border-radius: 8px; /* Bordes redondeados */
+    background-color: #fff; /* Fondo blanco */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
+    max-width: 800px; /* Ancho máximo */
+    margin-left: auto; /* Centrado automático */
+    margin-right: auto; /* Centrado automático */
+}
+
+/* Estilos para los inputs del formulario */
+.modal-content input {
+    margin-bottom: 15px;
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #4CAF50;
+    border-radius: 6px;
+    font-size: 1rem;
+    color: #333;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s ease;
+}
+
+.modal-content input:focus {
+    border-color: #4CAF50;
+    outline: none;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.4);
+}
+
+.modal-content input::placeholder {
+    color: #999;
+}
+
+/* Botón de enviar */
+.modal-content button[type="submit"] {
+    padding: 12px;
+    background-color: #4CAF50;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.modal-content button[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+/* Botón de cerrar */
+.modal-content button[type="button"] {
+    padding: 10px;
+    background-color: #f44336;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.modal-content button[type="button"]:hover {
+    background-color: #e53935;
+}
+
+/* Estilos para el componente AddReport */
+.add-report-container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.add-report-title {
+    font-size: 24px;
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+.add-report-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.add-report-input, 
+.add-report-select {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.add-report-input:focus, 
+.add-report-select:focus {
+    border-color: #27ae60;
+    outline: none;
+    box-shadow: 0 0 5px rgba(39, 174, 96, 0.5);
+}
+
+.add-report-button {
+    display: flex; /* Usa flexbox para centrar el contenido */
+    align-items: center; /* Centra verticalmente el contenido */
+    justify-content: center; /* Centra horizontalmente el contenido */
+    background-color: #2cce1a;
+    color: white;
+    border: none;
+    padding: 10px 15px; /* Ajusta el padding para más espacio */
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none; /* Elimina el subrayado si se ve como un enlace */
+}
+
+.add-report-button img {
+    width: 20px; /* Ajusta el tamaño del ícono */
+    height: auto; /* Mantiene la proporción */
+    margin-right: 8px; /* Espacio entre el ícono y el texto */
+}
+
+
+.add-report-button:hover {
+    background-color: #28a745; /* Color más oscuro en hover */
+}
+
+
+
+
+/* Estilos para el dashboard */
+.dashboard-container {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    position:static;
+}
+
+/* Títulos */
+.dashboard-title {
+    text-align: center;
+    font-size: 2rem;
+    color: #0e8c00;
+    margin-bottom: 20px;
+}
+
+.add-report-button {
+    background-color: #055208; /* Color verde */
+    color: white; /* Texto blanco */
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-bottom: 20px; /* Espaciado inferior */
+}
+
+.add-report-button:hover {
+    background-color: #45a049; /* Color más oscuro al pasar el mouse */
+}
+
+.reports-title {
+    font-size: 1.8rem; /* Tamaño de fuente más grande */
+    font-weight: bold; /* Texto en negrita */
+    margin-top: 20px;
+    margin-bottom: 15px;
+    text-align: center;
+    color: #1a73e8; /* Color azul profesional */
+}
+
+.report-list {
+    padding-left: 20px; /* Indentación para los reportes */
+    margin-top: 10px; /* Espacio adicional arriba de la lista de reportes */
+}
+
+
+.report-item {
+    background-color: #e8f5e9; /* Fondo verde claro */
+    border: 1px solid #2e7d32; /* Borde verde más oscuro */
+    border-radius: 5px; /* Bordes redondeados suaves */
+    padding: 10px; /* Espaciado interno más reducido */
+    margin-bottom: 8px; /* Menor espaciado entre reportes */
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Transición suave para sombra y transformación */
+    cursor: pointer; /* Icono de mano al pasar el cursor */
+    color: #2e7d32; /* Texto en color verde */
+    font-weight: bold; /* Texto en negrita */
+    display: flex;
+    align-items: center;
+}
+
+.report-item:hover {
+    background-color: #c8e6c9; /* Fondo verde más intenso al pasar el cursor */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para dar efecto de elevación */
+    transform: scale(1.02); /* Ligera expansión al pasar el cursor */
+}
+
+.report-item::before {
+    content: "📄"; /* Icono de documento para diferenciar los reportes */
+    margin-right: 8px;
+}
+
+.report-item h4 {
+    margin: 0;
+    color: #333; /* Color de texto más oscuro para contraste */
+    font-size: 1.25rem; /* Tamaño de fuente del título */
+    font-weight: 600; /* Negrita ligera para el título */
+}
+
+.report-item p {
+    color: #555; /* Color de texto secundario para descripciones */
+    font-size: 0.9rem;
+    margin-top: 8px;
+}
+
+/* Estilos del pie de página */
+footer {
+    background-color: #2cce1a;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    margin-top: 20px; /* Espaciado superior */
+}
+
+.footer-logo {
+    width: 100px; /* Ancho del logo */
+}
+
+.footer-contact {
+    margin-top: 10px; /* Espaciado superior */
+    font-size: 0.9rem; /* Tamaño de fuente más pequeño */
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .login-modal,
+    .add-report-container,
+    .dashboard-container {
+        width: 90%; /* Ajustar el ancho en pantallas pequeñas */
+    }
+
+    .header-title {
+        font-size: 1.5rem; /* Tamaño de fuente más pequeño */
+    }
+}
+/* Configuración básica para el cuerpo */
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background-color: #f9f9f9;
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+/* Contenedor principal */
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Título de bienvenida */
+.welcome-title {
+    font-size: 2rem;
+    color: #2cce1a;
+    margin-bottom: 20px;
+}
+
+/* Descripción de bienvenida */
+.welcome-description {
+    font-size: 1.2rem;
+    color: #333;
+    max-width: 600px;
+    margin-bottom: 30px;
+}
+
+/* Imagen del reporte */
+.report-image {
+    width: 300px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo del footer */
+.footer {
+    width: 100%;
+    background-color: #454846a6;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.footer-content {
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    color: #f0f0f0;
+    padding: 0 20px;
+}
+
+.footer-logo {
+    width: 150px;
+    margin-bottom: 10px;
+}
+
+.footer-contact-info, .footer-presence, .footer-terms {
+    font-size: 0.9rem;
+    color: #f0f0f0;
+    text-align: left;
+    max-width: 300px;
+}
+
+.footer-contact-info h3, .footer-presence h3 {
+    color: #ffffff;
+    font-size: 1.2rem;
+}
+
+.footer-terms a {
+    color: #f0f0f0;
+    text-decoration: none;
+}
+
+.footer-terms a:hover {
+    text-decoration: underline;
+}
+/* Estilos para el botón de cerrar sesión */
+/* Botón de logout */
+.logout-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #e57373;
+    color: white;
+    border: none;
+    padding: 10px 15px; /* Padding predeterminado */
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex; /* Flexbox para alinear ícono y texto */
+    align-items: center; /* Centrar verticalmente */
+    gap: 8px; /* Espaciado entre el ícono y el texto */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Hover effect */
+.logout-button:hover {
+    background-color: #d32f2f; /* Color de fondo al hacer hover */
+}
+
+/* Estilo del ícono */
+.logout-button img {
+    width: 16px; /* Tamaño predeterminado del ícono */
+    height: 16px;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .logout-button {
+        top: 8px; /* Ajustar la posición superior */
+        right: 8px; /* Ajustar la posición derecha */
+        padding: 8px 12px; /* Reducir padding */
+        gap: 6px; /* Espaciado más pequeño */
+    }
+
+    .logout-button img {
+        width: 14px; /* Reducir el tamaño del ícono */
+        height: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logout-button {
+        top: 5px; /* Posicionar más cerca del borde */
+        right: 5px;
+        padding: 6px 10px; /* Reducir padding para móviles */
+        font-size: 0.9rem; /* Reducir tamaño de la fuente */
+        gap: 5px; /* Espaciado más pequeño entre ícono y texto */
+    }
+
+    .logout-button img {
+        width: 12px; /* Más pequeño para pantallas móviles */
+        height: 12px;
+    }
+}
+
+
+/* Estilos para mostrar el usuario logueado */
+.logged-in-user {
+    position: absolute;
+    top: 20px;
+    left: 20px; /* Posicionarlo un poco a la izquierda */
+    color: #333333; /* Color del texto, más suave */
+    font-weight: bold; /* Negrita */
+    font-size: 1rem; /* Tamaño de fuente adecuado */
+    display: flex; /* Usamos flexbox para alinear la imagen y el texto */
+    align-items: center; /* Centra verticalmente los elementos */
+}
+
+/* Estilo para la imagen */
+.logged-in-user img {
+    width: 20px; /* Tamaño del ícono */
+    height: 20px; /* Asegura que el ícono sea cuadrado */
+    margin-right: 10px; /* Espaciado entre el ícono y el texto */
+}
+
+/* Ajustes del texto */
+.logged-in-user p {
+    margin: 0; /* Elimina el margen predeterminado */
+    padding: 0; /* Elimina el padding predeterminado */
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .logged-in-user {
+        top: 15px; /* Ajustar la posición superior */
+        left: 15px; /* Ajustar la posición izquierda */
+        font-size: 0.9rem; /* Reducir el tamaño de la fuente */
+    }
+
+    .logged-in-user img {
+        width: 18px; /* Reducir tamaño del ícono */
+        height: 18px;
+        margin-right: 8px; /* Ajustar espaciado */
+    }
+}
+
+@media (max-width: 480px) {
+    .logged-in-user {
+        top: 10px; /* Posicionar más cerca del borde */
+        left: 10px;
+        font-size: 0.8rem; /* Fuente más pequeña */
+        flex-direction: column; /* Cambiar a columna si el espacio es limitado */
+        align-items: flex-start; /* Alinear texto e ícono al inicio */
+    }
+
+    .logged-in-user img {
+        width: 16px; /* Más pequeño para pantallas móviles */
+        height: 16px;
+        margin-bottom: 5px; /* Espaciado inferior al cambiar a columna */
+    }
+}
+
+
+.admin-menu {
+    display: flex;
+    justify-content: flex-start;
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    white-space: nowrap; /* Evita que los elementos se rompan en nuevas líneas */
+    width: 100%; /* Ajusta el contenedor al 100% del ancho disponible */
+    overflow-x: auto; /* Agrega una barra de desplazamiento horizontal si es necesario */
+    box-sizing: border-box; /* Incluye el borde y el padding en el cálculo del tamaño */
+}
+
+.menu-item {
+    background-color: transparent;
+    color: #333;
+    padding: 12px 20px;
+    margin: 0 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s;
+}
+
+.menu-item img {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+}
+
+.menu-item:hover {
+    background-color: #e0e0e0;
+    color: #000;
+}
+
+input:invalid {
+    border: 2px solid red;
+}
+
+input:valid {
+    border: 2px solid green;
+}
+
+input:invalid:focus {
+    outline: none;
+    box-shadow: 0 0 5px red;
+}
+
+.error-message {
+    color: red;
+    font-size: 0.9em;
+    margin-top: 5px;
+}
