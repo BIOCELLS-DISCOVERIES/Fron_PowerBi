@@ -16,7 +16,7 @@ const AddUserPermission = () => {
     useEffect(() => {
         const fetchUsuarios = async () => {
             try {
-                const response = await axios.get('http://3.89.107.130:5000/get_usuarios');
+                const response = await axios.get('https://back-power-bi.onrender.com/get_usuarios');
                 setUsuarios(response.data);
             } catch (err) {
                 setMessage({ type: 'error', text: 'Error al cargar los usuarios.' });
@@ -25,7 +25,7 @@ const AddUserPermission = () => {
 
         const fetchCategorias = async () => {
             try {
-                const response = await axios.get('http://3.89.107.130:5000/get_categories');
+                const response = await axios.get('https://back-power-bi.onrender.com/get_categories');
                 setCategorias(response.data);
             } catch (err) {
                 setMessage({ type: 'error', text: 'Error al cargar las categorías.' });
@@ -40,7 +40,7 @@ const AddUserPermission = () => {
         if (categoriaId) {
             const fetchSubcategorias = async () => {
                 try {
-                    const response = await axios.get(`http://3.89.107.130:5000/get_subcategories?categoria_id=${categoriaId}`);
+                    const response = await axios.get(`https://back-power-bi.onrender.com/get_subcategories?categoria_id=${categoriaId}`);
                     setSubcategorias(response.data);
                 } catch (err) {
                     setMessage({ type: 'error', text: 'Error al cargar las subcategorías.' });
@@ -55,7 +55,7 @@ const AddUserPermission = () => {
         if (subcategoriaId) {
             const fetchParametros = async () => {
                 try {
-                    const response = await axios.get(`http://3.89.107.130:5000/get_parametry?subcategoria_id=${subcategoriaId}`);
+                    const response = await axios.get(`https://back-power-bi.onrender.com/get_parametry?subcategoria_id=${subcategoriaId}`);
                     setParametros(response.data);
                 } catch (err) {
                     setMessage({ type: 'error', text: 'Error al cargar los parámetros.' });
@@ -71,7 +71,7 @@ const AddUserPermission = () => {
         setMessage({ type: '', text: '' });
 
         try {
-            const response = await axios.post('http://3.89.107.130:5000/add_user_permission', {
+            const response = await axios.post('https://back-power-bi.onrender.com/add_user_permission', {
                 usuario_id: usuarioId,
                 categoria_id: categoriaId,
                 subcategoria_id: subcategoriaId,

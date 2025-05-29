@@ -13,7 +13,7 @@ const AddSubcategory = ({ onSubcategoryAdded }) => {
     useEffect(() => {
         const fetchCategories = async () => {
             try {
-                const response = await axios.get('http://3.89.107.130:5000/get_categories'); // Cambia esto al endpoint correcto
+                const response = await axios.get('https://back-power-bi.onrender.com/get_categories'); // Cambia esto al endpoint correcto
                 setCategories(response.data); // Asumiendo que la respuesta contiene un array de categorías
             } catch (err) {
                 console.error("Error al cargar categorías:", err);
@@ -28,7 +28,7 @@ const AddSubcategory = ({ onSubcategoryAdded }) => {
         e.preventDefault();
 
         try {
-            const response = await axios.post('http://3.89.107.130:5000/add_subcategory', { nombre: subcategoryName, categoria_id: categoryId });
+            const response = await axios.post('https://back-power-bi.onrender.com/add_subcategory', { nombre: subcategoryName, categoria_id: categoryId });
 
             if (response.status === 200) {
                 // Mostrar mensaje de éxito como alerta

@@ -17,7 +17,7 @@ const AddUser = ({ onUserAdded }) => {
     useEffect(() => {
         const fetchRoles = async () => {
             try {
-                const response = await axios.get('http://3.89.107.130:5000/get_roles'); // URL del endpoint
+                const response = await axios.get('https://back-power-bi.onrender.com/get_roles'); // URL del endpoint
                 setRoles(response.data); // Asegúrate de que response.data contenga un array de roles
             } catch (err) {
                 alert('Error al cargar los roles.');
@@ -40,7 +40,7 @@ const AddUser = ({ onUserAdded }) => {
     
         try {
             // Enviar la solicitud POST al backend
-            const response = await axios.post('http://3.89.107.130:5000/add_user', {
+            const response = await axios.post('https://back-power-bi.onrender.com/add_user', {
                 username,
                 nombre,
                 correo,

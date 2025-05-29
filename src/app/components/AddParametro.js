@@ -13,8 +13,8 @@ const AddParametro = ({ onParametroAdded }) => {
         const fetchData = async () => {
             try {
                 const [categoriesResponse, subcategoriesResponse] = await Promise.all([
-                    axios.get('http://3.89.107.130:5000/get_categories'), // Cargar categorías
-                    axios.get('http://3.89.107.130:5000/get_subcategories'), // Cargar subcategorías
+                    axios.get('https://back-power-bi.onrender.com/get_categories'), // Cargar categorías
+                    axios.get('https://back-power-bi.onrender.com/get_subcategories'), // Cargar subcategorías
                 ]);
                 setCategories(categoriesResponse.data); // Guardar categorías
                 setSubcategories(subcategoriesResponse.data); // Guardar subcategorías
@@ -31,7 +31,7 @@ const AddParametro = ({ onParametroAdded }) => {
         e.preventDefault();
 
         try {
-            const response = await axios.post('http://3.89.107.130:5000/add_parametro', {
+            const response = await axios.post('https://back-power-bi.onrender.com/add_parametro', {
                 nombre: parametroName,
                 subcategoria_id: subcategoryId,
             });

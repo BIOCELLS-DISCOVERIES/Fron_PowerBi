@@ -26,7 +26,7 @@ const ReportePage = () => {
 
         const fetchReporte = async () => {
             try {
-                const response = await fetch(`http://3.89.107.130:5000/get_report?id=${id}`);
+                const response = await fetch(`https://back-power-bi.onrender.com/get_report?id=${id}`);
                 if (!response.ok) throw new Error(`Error al obtener el reporte`);
 
                 const data = await response.json();

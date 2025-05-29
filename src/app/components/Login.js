@@ -12,7 +12,7 @@ const Login = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('http://3.89.107.130:5000/login', {
+            const response = await axios.post('https://back-power-bi.onrender.com/login', {
                 username,
                 password
             });

@@ -18,7 +18,7 @@ const AddReport = () => {
     useEffect(() => {
         const fetchCategorias = async () => {
             try {
-                const response = await axios.get('http://3.89.107.130:5000/get_categories');
+                const response = await axios.get('https://back-power-bi.onrender.com/get_categories');
                 setCategorias(response.data);
             } catch (error) {
                 console.error('Error fetching categories:', error);
@@ -37,7 +37,7 @@ const AddReport = () => {
         if (selectedCategoriaId) {
             setIsLoadingSubcategorias(true);
             try {
-                const response = await axios.get(`http://3.89.107.130:5000/get_subcategories?categoria_id=${selectedCategoriaId}`);
+                const response = await axios.get(`https://back-power-bi.onrender.com/get_subcategories?categoria_id=${selectedCategoriaId}`);
                 setSubcategorias(response.data);
             } catch (error) {
                 console.error('Error fetching subcategories:', error);
@@ -55,7 +55,7 @@ const AddReport = () => {
         if (selectedSubcategoriaId) {
             setIsLoadingParametros(true);
             try {
-                const response = await axios.get(`http://3.89.107.130:5000/get_parametry?subcategoria_id=${selectedSubcategoriaId}`);
+                const response = await axios.get(`https://back-power-bi.onrender.com/get_parametry?subcategoria_id=${selectedSubcategoriaId}`);
                 setParametros(response.data);
             } catch (error) {
                 console.error('Error fetching parameters:', error);
@@ -74,7 +74,7 @@ const AddReport = () => {
             }
 
             const userId = localStorage.getItem('userId');
-            const response = await axios.post('http://3.89.107.130:5000/add_report', {
+            const response = await axios.post('https://back-power-bi.onrender.com/add_report', {
                 nombre,
                 link,
                 user_id: userId,

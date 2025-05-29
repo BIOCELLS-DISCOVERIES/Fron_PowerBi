@@ -11,7 +11,7 @@ const AddCategory = ({ onCategoryAdded }) => {
         e.preventDefault();
 
         try {
-            const response = await axios.post('http://3.89.107.130:5000/add_category', { nombre: categoryName });
+            const response = await axios.post('https://back-power-bi.onrender.com/add_category', { nombre: categoryName });
 
             if (response.status === 200) {
                 // Mostrar mensaje de éxito como alerta

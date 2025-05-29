@@ -84,7 +84,7 @@ const Dashboard = () => {
     
     const fetchUserPermissions = async (userId) => {
         try {
-            const response = await axios.get(`http://3.89.107.130:5000/get_user_permissions?user_id=${userId}`);
+            const response = await axios.get(`https://back-power-bi.onrender.com/get_user_permissions?user_id=${userId}`);
             const permisos = response.data.map(permiso => {
                 return {
                     categoria_id: permiso.categoria_id,
@@ -101,7 +101,7 @@ const Dashboard = () => {
 
     const fetchCategorias = async () => {
         try {
-            const response = await axios.get('http://3.89.107.130:5000/get_categories');
+            const response = await axios.get('https://back-power-bi.onrender.com/get_categories');
             setCategorias(response.data);
         } catch (error) {
             console.error('Error al obtener categorías:', error);
@@ -110,7 +110,7 @@ const Dashboard = () => {
 
     const fetchSubcategorias = async () => {
         try {
-            const response = await axios.get('http://3.89.107.130:5000/get_subcategories');
+            const response = await axios.get('https://back-power-bi.onrender.com/get_subcategories');
             const subcategoriasMap = {};
             response.data.forEach(sub => {
                 if (!subcategoriasMap[sub.categoria_id]) {
@@ -126,7 +126,7 @@ const Dashboard = () => {
 
     const fetchParametros = async () => {
         try {
-            const response = await axios.get('http://3.89.107.130:5000/get_parametros');
+            const response = await axios.get('https://back-power-bi.onrender.com/get_parametros');
             const parametrosMap = {};
             response.data.forEach(param => {
                 if (!parametrosMap[param.subcategoria_id]) {
@@ -143,7 +143,7 @@ const Dashboard = () => {
     const fetchReportes = async (role) => {
         const userId = localStorage.getItem('userId');
         try {
-            const response = await axios.get(`http://3.89.107.130:5000/get_reports?user_id=${userId}`);
+            const response = await axios.get(`https://back-power-bi.onrender.com/get_reports?user_id=${userId}`);
             const reportesGrouped = {};
 
             response.data.forEach((reporte) => {
