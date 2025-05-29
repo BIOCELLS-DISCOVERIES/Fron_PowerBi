@@ -27,11 +27,13 @@ const Dashboard = () => {
     const [isAddingParametro, setIsAddingParametro] = useState(false);
     const [isAddingPermissions, setIsAddingPermissions] = useState(false);
     const [role, setRole] = useState('');
-    const [username, setUsername] = useState(localStorage.getItem('username') || '');
+    const [username, setUsername] = useState('');
     const [loadingReport, setLoadingReport] = useState(false);
 
     useEffect(() => {
         const userId = localStorage.getItem('userId');
+        const storedUsername = localStorage.getItem('username');
+        if (storedUsername) setUsername(storedUsername)
         if (!userId) {
             router.push('/'); // Redirige a la página principal o de login si no hay usuario
         } else {
