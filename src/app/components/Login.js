@@ -7,10 +7,13 @@ import './styles.css';
 const Login = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const [loading, setLoading] = useState(false); // Estado de carga
     const router = useRouter();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        setLoading(true); // Inicia el spinner de carga
+
         try {
             const response = await axios.post('https://back-power-bi.onrender.com/login', {
                 username,
@@ -29,6 +32,8 @@ const Login = () => {
             }
         } catch (error) {
             alert('Error en el inicio de sesión: ' + (error.response?.data.message || error.message));
+        } finally {
+            setLoading(false); // Finaliza el spinner de carga
         }
     };
 
@@ -51,8 +56,11 @@ const Login = () => {
                         onChange={(e) => setPassword(e.target.value)}
                         required
                     />
-                    <button type="submit">Iniciar Sesión</button>
+                    <button type="submit" disabled={loading}>
+                        {loading ? 'Cargando...' : 'Iniciar Sesión'}
+                    </button>
                 </form>
+                {loading && <div className="spinner">Cargando...</div>} {/* Spinner de carga */}
             </div>
         </div>
     );

@@ -804,3 +804,19 @@ input:invalid:focus {
     font-size: 0.9em;
     margin-top: 5px;
 }
+
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 6px solid #f3f3f3; /* Gris claro */
+    border-top: 6px solid #0ca54c; /* Azul */
+    border-radius: 50%;
+    animation: spin 2s linear infinite;
+    margin: 10px auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
